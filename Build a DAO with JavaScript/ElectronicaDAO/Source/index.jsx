@@ -10,7 +10,8 @@ import { ChainId, ThirdwebProvider } from '@thirdweb-dev/react';
 const activeChainId = ChainId.Rinkeby;
 
 // Wrap the app with the thirdweb provider
-ReactDOM.render(
+ReactDOM.render
+(
   <React.StrictMode>
     <ThirdwebProvider desiredChainId={activeChainId}>
       <App />
