@@ -7,11 +7,11 @@ const main = async () =>
 console.log("Contract Deployer Address: ", deployer.address);
 console.log("Account Balance: ", accountBalance.toString());
 
-const waveContractFactory = await hre.ethers.getContractFactory("WavePortal");
-const waveContract = await waveContractFactory.deploy();
-await waveContract.deployed();
+const dreamContractFactory = await hre.ethers.getContractFactory("DreamPortal");
+const dreamContract = await dreamContractFactory.deploy();
+await dreamContract.deployed();
 
-console.log("WavePortal Address: ", waveContract.address);
+console.log("DreamPortal Address: ", dreamContract.address);
 };
 
 const runMain = async () =>
