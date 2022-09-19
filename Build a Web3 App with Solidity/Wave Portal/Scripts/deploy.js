@@ -8,7 +8,7 @@ console.log("Contract Deployer Address: ", deployer.address);
 console.log("Account Balance: ", accountBalance.toString());
 
 const dreamContractFactory = await hre.ethers.getContractFactory("DreamPortal");
-const dreamContract = await dreamContractFactory.deploy();
+const dreamContract = await dreamContractFactory.deploy({value: hre.ethers.utils.parseEther("0.01")});
 await dreamContract.deployed();
 
 console.log("DreamPortal Address: ", dreamContract.address);
