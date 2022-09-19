@@ -1,0 +1,117 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+
+* 
+{
+  box-sizing: border-box;
+}
+
+body
+{
+  width: 100vw;
+  height: 100vh;
+  background: #1d1e21;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+ @font-face
+{
+        font-family: 'Wormbox';
+        src: local('wormbox_sharp'), url('wormbox_sharp.ttf') format('truetype');
+       font-weight: normal;
+       font-style: normal;
+}
+
+.mainContainer
+{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 64px;
+}
+
+.dataContainer
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 600px;
+}
+
+.header
+{
+  text-align: center;
+  color: #ffffff;
+  font-family: "Wormbox";
+  font-size: 58px;
+  font-weight: 800;
+}
+
+.bio
+{
+  text-align: center;
+  color: #ffffff;
+  font-family: "Wormbox", sans-serif;
+  font-size: 30px;
+  font-weight: 500;
+  margin-top: 18px;
+}
+
+.description
+{
+  text-align: center;
+  color: #ffffff;
+  font-family: "Wormbox", sans-serif;
+  font-size: 30px;
+  font-weight: 500;
+  margin-top: 18px;
+}
+
+.dreamButton
+{
+  cursor: pointer;
+  margin-top: 16px;
+  padding: 10px;
+  font-family: "Wormbox";
+  font-size: 24px;
+  font-weight: 700;
+  color: white;
+  background-color: transparent;
+  border: 5;
+  border-color: #6e1107;
+  border-radius: 30px;
+  border-width: 6px;
+}
+
+.connectButton
+{
+  cursor: pointer;
+  margin-top: 16px;
+  padding: 10px;
+  font-family: "Wormbox";
+  font-size: 24px;
+  font-weight: 700;
+  color: white;
+  background-color: transparent;
+  border: 5;
+  border-color: #6e1107;
+  border-radius: 30px;
+  border-width: 6px;
+}
+
+.dreamMessage
+{
+  margin-top: 16px;
+  padding: 20px;
+  text-align: center;
+  font-family: "Wormbox";
+  font-size: 24px;
+  font-weight: 700;
+  color: white;
+  background-color: transparent;
+  border: 5;
+  border-color: #6e1107;
+  border-radius: 30px;
+  border-width: 6px;
+}
