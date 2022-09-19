@@ -5,17 +5,29 @@ const main = async () =>
 {
     const [owner, user] = await hre.ethers.getSigners(); // gets the owner address and a random address
     const dreamContractFactory = await hre.ethers.getContractFactory("DreamPortal"); // compiles WavePortal and generates necessary files in the artifiacts directory
-    const dreamContract = await dreamContractFactory.deploy(); // hardhat makes a local ethereum network for WavePortal that is destroyed upon script completion
+    const dreamContract = await dreamContractFactory.deploy({ value: hre.ethers.utils.parseEther("0.1")}); // hardhat makes a local ethereum network for WavePortal that is destroyed upon script completion
     await dreamContract.deployed(); // the constructor will wait to run until WavePortal is deployed to the local blockchain
     
     console.log("Contract deployed to: ", dreamContract.address); // gives the address of the deployed contract
     console.log("Contract deployed by:", owner.address); // outputs the owner address
+
+  let contractBalance = await hre.ethers.provider.getBalance // gets initial contract balance
+  (
+    dreamContract.address
+  );
+  console.log("Contract balance:", hre.ethers.utils.formatEther(contractBalance));
+
+   let dreamTxn = await dreamContract.dream("I'd like to visit Shang Tsung's Island"); // sends a dream
+   await dreamTxn.wait();
+
+  contractBalance = await hre.ethers.provider.getBalance(dreamContract.address); // gets DreamPortal balance to see what happened
+  console.log("Contract balance:", hre.ethers.utils.formatEther(contractBalance));
     
     let dreamCount;
     dreamCount = await dreamContract.getTotalDreams(); // gets the total number of waves
     console.log(dreamCount.toNumber());
 
-    let dreamTxn = await dreamContract.dream("I would like to be a witcher hunting a beast in Skellige.");
+    dreamTxn = await dreamContract.dream("I would like to be a witcher hunting a beast in Skellige.");
     await dreamTxn.wait();
 
     dreamCount = await dreamContract.getTotalDreams(); // checks if waveCount has changed
